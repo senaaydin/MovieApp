@@ -1,6 +1,8 @@
 package com.sena.movieapp.base.network
 
 import com.sena.movieapp.base.network.KeyStore.BASE_URL
+import com.sena.movieapp.screen.employee.EmployeeService
+import com.sena.movieapp.screen.movie.MovieService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -22,5 +24,13 @@ object Dependency {
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .callFactory { okHttpClient.newCall(it) }
             .build()
+    }
+
+    val movieService: MovieService by lazy {
+        repository.create(MovieService::class.java)
+    }
+
+    val employeeService: EmployeeService by lazy {
+        repository.create(EmployeeService::class.java)
     }
 }

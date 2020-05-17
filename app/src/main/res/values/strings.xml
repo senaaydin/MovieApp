@@ -18,4 +18,9 @@
 
     <string name="common_text_cast">Cast</string>
     <!-- endregion -->
+
+    <!-- region Show Detail -->
+    <string name="show_detail_message_not_specified">Not Specified</string>
+    <string name="show_detail_message_min_formatted">%d min</string>
+    <!-- endregion -->
 </resources>

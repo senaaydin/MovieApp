@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aspect_ratio_height_image">H, 1:0.7</string>
+    <string name="aspect_ratio_width_image">W, 1:0.7</string>
+    <string name="aspect_ratio_header">0.9:1</string>
+
+    <string name="arg_hide_bottom_nav">hideBottomNavigation</string>
+
+</resources>
