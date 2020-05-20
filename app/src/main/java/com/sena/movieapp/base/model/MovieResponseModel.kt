@@ -1,9 +1,9 @@
 package com.sena.movieapp.base.model
 
+import com.sena.movieapp.base.datasource.BaseResponseModel
 import com.sena.movieapp.uimodel.MovieGenreUiModel
 import com.sena.movieapp.uimodel.MovieUiModel
 import com.squareup.moshi.Json
-import java.io.Serializable
 import java.util.*
 
 data class MovieResponseModel(
@@ -27,7 +27,7 @@ data class MovieResponseModel(
     val isAdult: Boolean,
     @Json(name = "release_date")
     val releaseDate: Date?
-):BaseResponseModel() {
+): BaseResponseModel() {
 
     fun toUiModel(genres: List<MovieGenreUiModel>) = MovieUiModel(
         id = id,

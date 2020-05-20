@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import com.sena.movieapp.R
+import com.sena.movieapp.base.MyAppClass
 import com.sena.movieapp.base.view.BaseActivity
 import com.sena.movieapp.screen.movie.MovieActivity
 import com.sena.movieapp.uimodel.MovieDetailUiModel
@@ -15,11 +16,9 @@ class MovieDetailActivity : BaseActivity<MovieDetailViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+       // (application as MyAppClass).appComponent.inject(this)
         setContentView(R.layout.activity_movie_detail)
-
-        with(viewModel) {
-            fetchMovieDetails(419704)
-        }
+        viewModel.fetchMovieDetails(419704)
     }
 
     fun initUi(it: MovieDetailUiModel){

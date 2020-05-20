@@ -8,15 +8,19 @@ import com.sena.movieapp.base.usecase.UseCase
 import com.sena.movieapp.base.viewmodel.BaseAndroidViewModel
 import com.sena.movieapp.uimodel.MovieUiModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MovieViewModel(application: Application): BaseAndroidViewModel(application){
-    private val useCase: FetchPopularMovieUseCase = FetchPopularMovieUseCase()
+class MovieViewModel @Inject constructor(
+    private val fetchPopularMoviesUseCase: FetchPopularMoviesUseCase,
+    //private val fetchNowPlayingMoviesUseCase: FetchNowPlayingMoviesUseCase,
+    application: Application
+) : BaseAndroidViewModel(application) {
 
      val popularMovies = MutableLiveData<List<MovieResponseModel>>()
 
      fun fetchPopularMovies() {
         viewModelScope.launch {
-            val response = useCase.run(UseCase.None)
+            val response = fetchPopularMoviesUseCase.run(UseCase.None)
             response.either(::handleFailure, ::postPopularMovieList)
 
         }

@@ -4,8 +4,9 @@ import com.sena.movieapp.base.datasource.BaseRemoteDataSource
 import com.sena.movieapp.base.model.MovieDetailResponseModel
 import com.sena.movieapp.base.model.MovieGenreResponseModel
 import com.sena.movieapp.base.model.PopularMovieResponseModel
+import javax.inject.Inject
 
-class MovieRemoteDataSource constructor(private val service: MovieService): BaseRemoteDataSource() {
+class MovieRemoteDataSource @Inject constructor(private val service: MovieService): BaseRemoteDataSource() {
 
     suspend fun fetchPopularMovies(): PopularMovieResponseModel = service.fetchPopularMovies()
 

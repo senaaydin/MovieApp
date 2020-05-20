@@ -3,12 +3,12 @@ package com.sena.movieapp.screen.movie
 import com.sena.movieapp.base.datasource.MovieLocalDataSource
 import com.sena.movieapp.base.model.MovieResponseModel
 import com.sena.movieapp.base.network.Dependency.movieService
-import com.sena.movieapp.uimodel.MovieGenreUiModel
-import com.sena.movieapp.uimodel.MovieUiModel
-import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
 
-class MovieRepository (
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class MovieRepository @Inject constructor(
     private val remoteDataSource: MovieRemoteDataSource = MovieRemoteDataSource(movieService)
 ){
     suspend fun fetchPopularMovies(): List<MovieResponseModel> {

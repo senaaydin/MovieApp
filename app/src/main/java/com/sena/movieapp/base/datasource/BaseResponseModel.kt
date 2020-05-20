@@ -1,4 +1,4 @@
-package com.sena.movieapp.base.model
+package com.sena.movieapp.base.datasource
 
 import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi

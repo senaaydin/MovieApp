@@ -7,9 +7,11 @@ import com.sena.movieapp.base.model.EmployeeInformation
 import com.sena.movieapp.base.usecase.UseCase
 import com.sena.movieapp.base.viewmodel.BaseAndroidViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class EmployeeViewModel(application: Application) : BaseAndroidViewModel(application) {
-    private val usaCase: FetchEmployeeUsaCase = FetchEmployeeUsaCase()
+class EmployeeViewModel @Inject constructor (application: Application) : BaseAndroidViewModel(application) {
+    @Inject
+    lateinit var usaCase: FetchEmployeeUsaCase
 
     val employeeList = MutableLiveData<List<EmployeeInformation>>()
 

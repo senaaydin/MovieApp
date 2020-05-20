@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextField.MainTabTitle" parent="TextField.White">
+        <item name="android:textAppearance">@style/TextField.Header4</item>
+        <item name="android:paddingStart">@dimen/margin_xxl</item>
+        <item name="android:paddingTop">@dimen/margin_extra_large</item>
+        <item name="android:paddingEnd">@dimen/margin_xxl</item>
+        <item name="android:paddingBottom">@dimen/margin_extra_large</item>
+    </style>
+</resources>

@@ -1,5 +1,6 @@
 package com.sena.movieapp.base.model
 
+import com.sena.movieapp.base.datasource.BaseResponseModel
 import com.sena.movieapp.uimodel.MovieDetailUiModel
 import com.squareup.moshi.Json
 import java.util.*

@@ -7,14 +7,15 @@ import androidx.lifecycle.viewModelScope
 import com.sena.movieapp.base.viewmodel.BaseAndroidViewModel
 import com.sena.movieapp.uimodel.MovieDetailUiModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class MovieDetailViewModel(
-    private val fetchMovieDetailUseCase: FetchMovieDetailUseCase,
+class MovieDetailViewModel @Inject constructor(
+     val fetchMovieDetailUseCase: FetchMovieDetailUseCase,
     //private val fetchMovieCreditsUseCase: FetchMovieCreditsUseCase,
     application: Application
 ) : BaseAndroidViewModel(application) {
 
-    private val _movieDetails = MutableLiveData<MovieDetailUiModel>()
+     val _movieDetails = MutableLiveData<MovieDetailUiModel>()
     //private val _movieCredits = MutableLiveData<MovieCreditUiModel>()
     val movieDetails: LiveData<MovieDetailUiModel> get() = _movieDetails
     //val movieCredits: LiveData<MovieCreditUiModel> get() = _movieCredits
@@ -29,7 +30,7 @@ class MovieDetailViewModel(
         }
     }
 
-    private fun postMovieDetail(movieDetailUiModel: MovieDetailUiModel) {
+    fun postMovieDetail(movieDetailUiModel: MovieDetailUiModel) {
         _movieDetails.value = movieDetailUiModel
     }
 

@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sena.movieapp.R
+import com.sena.movieapp.base.MyAppClass
 import com.sena.movieapp.base.model.EmployeeInformation
 import com.sena.movieapp.base.view.BaseActivity
 import kotlinx.android.synthetic.main.activity_employee.*
@@ -14,6 +15,7 @@ class EmployeeActivity : BaseActivity<EmployeeViewModel>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        (application as MyAppClass).appComponent.inject(this)
         setContentView(R.layout.activity_employee)
         observeData()
         viewModel.fetchEmployeeViewModel()
